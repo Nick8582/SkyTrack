@@ -2,9 +2,10 @@ import type { IFlight } from '../../types/flight.types'
 
 export const FLIGHTS: IFlight[] = [
   {
+    id: 'TK143',
     logo: '/logos/turkish.svg',
-    airline: 'TK143',
     aircraftReg: 'TC-JFP',
+    airline: { name: 'Turkish Airline', country: 'Turkey' },
     from: {
       city: 'Sofia',
       country: 'Bulgaria',
@@ -23,16 +24,17 @@ export const FLIGHTS: IFlight[] = [
       image: '/planes/turkish.png',
       name: 'Airbus A330',
     },
-    colorGradient: ['#ffdede', '#ffbaba'],
+    colorGradient: ['#ffa6a6', '#D43D3D'],
     route: {
       speed: 870,
       altitude: 10600,
     },
   },
   {
+    id: 'RN1782',
     logo: '/logos/ryanair.svg',
-    airline: 'RN1782',
     aircraftReg: 'D-AISP',
+    airline: { name: 'Ryanair', country: 'Ireland' },
     from: {
       city: 'Dublin',
       country: 'Ireland',
@@ -58,9 +60,10 @@ export const FLIGHTS: IFlight[] = [
     },
   },
   {
+    id: 'S7124',
     logo: '/logos/s7.svg',
-    airline: 'S7124',
     aircraftReg: 'RA-73415',
+    airline: { name: 'S7 Airlines', country: 'Russia' },
     from: {
       city: 'Nice',
       country: 'France',
@@ -79,16 +82,17 @@ export const FLIGHTS: IFlight[] = [
       image: '/planes/s7.png',
       name: 'Airbus A320neo',
     },
-    colorGradient: ['#d6ffe5', '#96f2c1'],
+    colorGradient: ['#d9ffaa', '#aeea66'],
     route: {
       speed: 860,
       altitude: 10900,
     },
   },
   {
+    id: 'LX318',
     logo: '/logos/swiss.svg',
-    airline: 'LX318',
     aircraftReg: 'HB-JHK',
+    airline: { name: 'SWISS International Air Lines', country: 'Switzerland' },
     from: {
       city: 'Porto',
       country: 'Portugal',
@@ -114,9 +118,10 @@ export const FLIGHTS: IFlight[] = [
     },
   },
   {
+    id: 'LH401',
     logo: '/logos/lufthansa.svg',
-    airline: 'LH401',
     aircraftReg: 'D-AIXD',
+    airline: { name: 'Lufthansa', country: 'Germany' },
     from: {
       city: 'Burgas',
       country: 'Bulgaria',

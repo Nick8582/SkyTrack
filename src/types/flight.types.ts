@@ -16,12 +16,18 @@ export interface IFlightLocation {
   code: string
 }
 
+export interface IFlightAirline {
+  name: string
+  country: string
+}
+
 export interface IFlight {
+  id: string
+  airline: IFlightAirline
   airplane: IFlightAirplane
   route: IFlightRoute
   logo: string
   colorGradient: [string, string]
-  airline: string
   aircraftReg: string
   from: IFlightLocation
   to: IFlightLocation

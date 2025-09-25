@@ -5,7 +5,7 @@ export function FlightList() {
   return (
     <div className='w-sm space-y-4'>
       {FLIGHTS.map(flight => (
-        <FlightCard flight={flight} key={flight.airline} />
+        <FlightCard flight={flight} key={flight.id} />
       ))}
     </div>
   )

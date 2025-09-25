@@ -2,6 +2,13 @@ import { useMemo } from 'react'
 import { useSearchParams } from 'react-router'
 import { QUERY_PARAM_FLIGHT } from '../flight-list/flights.constants'
 import { FLIGHTS } from '../flight-list/flights.data'
+import { FlightActions } from './FlightActions'
+import { FlightHeader } from './FlightHeader'
+import { FlightImage } from './FlightImage'
+import { FlightInformation } from './FlightInformation'
+import { FlightRoute } from './FlightRoute'
+import { FlightSchedule } from './FlightSchedule'
+import { FlightStatus } from './flightStatus'
 
 export function FlightDetails() {
   const [searchParams] = useSearchParams()
@@ -9,28 +16,28 @@ export function FlightDetails() {
   const selectedFlight = searchParams.get(QUERY_PARAM_FLIGHT)
 
   const flight = useMemo(
-    () => FLIGHTS.find(flight => flight.airline === selectedFlight),
+    () => FLIGHTS.find(flight => flight.id === selectedFlight),
     [selectedFlight],
   )
 
+  if (!flight) {
+    return null
+  }
+
   return (
     <aside
-      className='absolute w-sm top-7 right-7 g-full rounded-xl bg-[#101010]'
+      className='absolute w-sm top-7 right-7 g-full rounded-xl overflow-hidden bg-[#101010]'
       style={{ height: 'calc(100% - 56px)' }}
     >
-      {flight?.airline}
-      <div
-        className='w-full h-60'
-        style={{
-          background: `linear-gradient(to top, ${flight?.colorGradient[0]}, ${flight?.colorGradient[1]})`,
-        }}
-      >
-        <img
-          src={flight?.airplane.image}
-          alt={flight?.airplane.name}
-          className='max-w-full h-auto'
-        />
-      </div>
+      <FlightHeader flight={flight} />
+      <FlightImage flight={flight} />
+
+      <FlightRoute flight={flight} />
+      <FlightStatus />
+      <FlightSchedule />
+
+      <FlightInformation flight={flight} />
+      <FlightActions />
     </aside>
   )
 }

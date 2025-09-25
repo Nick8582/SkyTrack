@@ -12,7 +12,7 @@ export function FlightCard({ flight }: Props) {
 
   const selectedFlight = searchParams.get(QUERY_PARAM_FLIGHT)
 
-  const isActive = selectedFlight === flight.airline
+  const isActive = selectedFlight === flight.id
 
   return (
     <div
@@ -23,7 +23,7 @@ export function FlightCard({ flight }: Props) {
     >
       <button
         onClick={() => {
-          setSearchParams({ [QUERY_PARAM_FLIGHT]: flight.airline })
+          setSearchParams({ [QUERY_PARAM_FLIGHT]: flight.id })
         }}
         className={cn('bg-neutral-900 p-5 block w-full h-full rounded-lg')}
       >
@@ -31,12 +31,12 @@ export function FlightCard({ flight }: Props) {
           <div className='flex items-center gap-3'>
             <img
               src={flight.logo}
-              alt={`${flight.airline} logo`}
+              alt={`${flight.airline.name} logo`}
               width={40}
               height={40}
               className='rounded-full bg-white'
             />
-            <span>{flight.airline}</span>
+            <span>{flight.id}</span>
           </div>
           <div>
             <span className='bg-neutral-800 rounded-xl px-2 py-1'>{flight.aircraftReg}</span>
