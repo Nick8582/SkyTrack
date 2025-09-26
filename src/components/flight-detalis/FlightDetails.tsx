@@ -25,19 +25,23 @@ export function FlightDetails() {
   }
 
   return (
-    <aside
-      className='absolute w-sm top-7 right-7 g-full rounded-xl overflow-hidden bg-[#101010]'
-      style={{ height: 'calc(100% - 56px)' }}
-    >
+    <aside className='absolute w-sm top-1/2 -translate-y-1/2 right-7 g-full rounded-xl overflow-hidden bg-[#101010]'>
       <FlightHeader flight={flight} />
       <FlightImage flight={flight} />
 
-      <FlightRoute flight={flight} />
-      <FlightStatus />
-      <FlightSchedule />
+      <div className='p-3.5'>
+        <FlightRoute flight={flight} />
+        <FlightStatus />
+        <FlightSchedule />
 
-      <FlightInformation flight={flight} />
-      <FlightActions />
+        <FlightInformation flight={flight} />
+        <FlightActions
+          onFollow={() => {}}
+          onMore={() => {}}
+          onRoute={() => {}}
+          onShare={() => {}}
+        />
+      </div>
     </aside>
   )
 }

@@ -1,8 +1,8 @@
 'use client'
 
-import { cn } from '@/utils/cn'
-import { isMotionComponent, motion, type HTMLMotionProps } from 'motion/react'
 import * as React from 'react'
+import { motion, isMotionComponent, type HTMLMotionProps } from 'motion/react'
+import { cn } from '@/utils/cn'
 
 type AnyProps = Record<string, unknown>
 
@@ -74,4 +74,4 @@ function Slot<T extends HTMLElement = HTMLElement>({ children, ref, ...props }: 
   return <Base {...mergedProps} ref={mergeRefs(childRef as React.Ref<T>, ref)} />
 }
 
-export { Slot, type AnyProps, type DOMMotionProps, type SlotProps, type WithAsChild }
+export { Slot, type SlotProps, type WithAsChild, type DOMMotionProps, type AnyProps }
