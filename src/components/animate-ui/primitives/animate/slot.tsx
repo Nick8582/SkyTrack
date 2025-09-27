@@ -1,7 +1,9 @@
 'use client'
 
 import * as React from 'react'
-import { motion, isMotionComponent, type HTMLMotionProps } from 'motion/react'
+
+import { type HTMLMotionProps, isMotionComponent, motion } from 'motion/react'
+
 import { cn } from '@/utils/cn'
 
 type AnyProps = Record<string, unknown>
@@ -35,7 +37,7 @@ function mergeRefs<T>(...refs: (React.Ref<T> | undefined)[]): React.RefCallback<
 
 function mergeProps<T extends HTMLElement>(
   childProps: AnyProps,
-  slotProps: DOMMotionProps<T>,
+  slotProps: DOMMotionProps<T>
 ): AnyProps {
   const merged: AnyProps = { ...childProps, ...slotProps }
 
@@ -62,7 +64,7 @@ function Slot<T extends HTMLElement = HTMLElement>({ children, ref, ...props }: 
       isAlreadyMotion
         ? (children.type as React.ElementType)
         : motion.create(children.type as React.ElementType),
-    [isAlreadyMotion, children.type],
+    [isAlreadyMotion, children.type]
   )
 
   if (!React.isValidElement(children)) return null

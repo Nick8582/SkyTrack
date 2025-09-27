@@ -1,7 +1,10 @@
-import { ThemeProvider } from '@/providers/theme/ThemeProvider'
 import { StrictMode } from 'react'
+
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router'
+
+import { ThemeProvider } from '@/providers/theme/ThemeProvider'
+
 import { Layout } from './components/Layout'
 import './index.css'
 import { Home } from './pages/home/Home'
@@ -12,10 +15,10 @@ createRoot(document.getElementById('root')!).render(
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
-            <Route path='/' element={<Home />} />
+            <Route path="/" element={<Home />} />
           </Route>
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
-  </StrictMode>,
+  </StrictMode>
 )

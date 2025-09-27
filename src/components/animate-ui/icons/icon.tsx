@@ -1,15 +1,16 @@
 'use client'
 
+import * as React from 'react'
+
 import {
-  motion,
-  useAnimation,
   type HTMLMotionProps,
   type LegacyAnimationControls,
+  motion,
   type SVGMotionProps,
+  useAnimation,
   type UseInViewOptions,
   type Variants,
 } from 'motion/react'
-import * as React from 'react'
 
 import { Slot, type WithAsChild } from '@/components/animate-ui/primitives/animate/slot'
 import { useIsInView } from '@/hooks/use-is-in-view'
@@ -110,7 +111,7 @@ function useAnimateIconContext() {
 
 function composeEventHandlers<E extends React.SyntheticEvent<unknown>>(
   theirs?: (event: E) => void,
-  ours?: (event: E) => void,
+  ours?: (event: E) => void
 ) {
   return (event: E) => {
     theirs?.(event)
@@ -146,7 +147,7 @@ function AnimateIcon({
     return delay <= 0
   })
   const [currentAnimation, setCurrentAnimation] = React.useState<string | StaticAnimations>(
-    typeof animate === 'string' ? animate : animation,
+    typeof animate === 'string' ? animate : animation
   )
   const [status, setStatus] = React.useState<'initial' | 'animate'>('initial')
 
@@ -182,7 +183,7 @@ function AnimateIcon({
         setLocalAnimate(true)
       }
     },
-    [animation, delay, bumpGeneration],
+    [animation, delay, bumpGeneration]
   )
 
   const stopAnimation = React.useCallback(() => {
@@ -233,7 +234,7 @@ function AnimateIcon({
         return
       }
     },
-    [controls],
+    [controls]
   )
 
   React.useEffect(() => {
@@ -371,28 +372,28 @@ function AnimateIcon({
     childProps.onMouseEnter,
     () => {
       if (animateOnHover) startAnimation(animateOnHover)
-    },
+    }
   )
 
   const handleMouseLeave = composeEventHandlers<React.MouseEvent<HTMLElement>>(
     childProps.onMouseLeave,
     () => {
       if (animateOnHover || animateOnTap) stopAnimation()
-    },
+    }
   )
 
   const handlePointerDown = composeEventHandlers<React.PointerEvent<HTMLElement>>(
     childProps.onPointerDown,
     () => {
       if (animateOnTap) startAnimation(animateOnTap)
-    },
+    }
   )
 
   const handlePointerUp = composeEventHandlers<React.PointerEvent<HTMLElement>>(
     childProps.onPointerUp,
     () => {
       if (animateOnTap) stopAnimation()
-    },
+    }
   )
 
   const content = asChild ? (
@@ -489,7 +490,7 @@ function IconWrapper<T extends string>({
 
     if (hasOverrides) {
       const inheritedAnimate: Trigger = parentActive
-        ? animationProp ?? parentAnimation ?? 'default'
+        ? (animationProp ?? parentAnimation ?? 'default')
         : false
 
       const finalAnimate: Trigger = (animate ?? parentAnimate ?? inheritedAnimate) as Trigger
@@ -517,7 +518,7 @@ function IconWrapper<T extends string>({
               className,
               ((animationProp ?? parentAnimation) === 'path' ||
                 (animationProp ?? parentAnimation) === 'path-loop') &&
-                pathClassName,
+                pathClassName
             )}
             {...props}
           />
@@ -547,7 +548,7 @@ function IconWrapper<T extends string>({
           size={size}
           className={cn(
             className,
-            (animationToUse === 'path' || animationToUse === 'path-loop') && pathClassName,
+            (animationToUse === 'path' || animationToUse === 'path-loop') && pathClassName
           )}
           {...props}
         />
@@ -581,7 +582,7 @@ function IconWrapper<T extends string>({
           size={size}
           className={cn(
             className,
-            (animationProp === 'path' || animationProp === 'path-loop') && pathClassName,
+            (animationProp === 'path' || animationProp === 'path-loop') && pathClassName
           )}
           {...props}
         />
@@ -594,7 +595,7 @@ function IconWrapper<T extends string>({
       size={size}
       className={cn(
         className,
-        (animationProp === 'path' || animationProp === 'path-loop') && pathClassName,
+        (animationProp === 'path' || animationProp === 'path-loop') && pathClassName
       )}
       {...props}
     />
@@ -605,7 +606,6 @@ function getVariants<
   V extends { default: T; [key: string]: T },
   T extends Record<string, Variants>,
 >(animations: V): T {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { animation: animationType } = useAnimateIconContext()
 
   let result: T

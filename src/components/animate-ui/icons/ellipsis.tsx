@@ -4,9 +4,9 @@ import { motion, type Variants } from 'motion/react'
 
 import {
   getVariants,
+  type IconProps,
   IconWrapper,
   useAnimateIconContext,
-  type IconProps,
 } from '@/components/animate-ui/icons/icon'
 
 type EllipsisProps = IconProps<keyof typeof animations>
@@ -138,17 +138,17 @@ function IconComponent({ size, ...props }: EllipsisProps) {
 
   return (
     <motion.svg
-      xmlns='http://www.w3.org/2000/svg'
+      xmlns="http://www.w3.org/2000/svg"
       width={size}
       height={size}
-      viewBox='0 0 24 24'
-      fill='none'
-      stroke='currentColor'
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
       strokeWidth={2}
-      strokeLinecap='round'
-      strokeLinejoin='round'
+      strokeLinecap="round"
+      strokeLinejoin="round"
       variants={variants.group}
-      initial='initial'
+      initial="initial"
       animate={controls}
       {...props}
     >
@@ -157,7 +157,7 @@ function IconComponent({ size, ...props }: EllipsisProps) {
         cy={12}
         r={1}
         variants={variants.circle1}
-        initial='initial'
+        initial="initial"
         animate={controls}
       />
       <motion.circle
@@ -165,7 +165,7 @@ function IconComponent({ size, ...props }: EllipsisProps) {
         cy={12}
         r={1}
         variants={variants.circle2}
-        initial='initial'
+        initial="initial"
         animate={controls}
       />
       <motion.circle
@@ -173,7 +173,7 @@ function IconComponent({ size, ...props }: EllipsisProps) {
         cy={12}
         r={1}
         variants={variants.circle3}
-        initial='initial'
+        initial="initial"
         animate={controls}
       />
     </motion.svg>

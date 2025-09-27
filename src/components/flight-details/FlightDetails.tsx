@@ -1,5 +1,7 @@
 import { useMemo } from 'react'
+
 import { useSearchParams } from 'react-router'
+
 import { QUERY_PARAM_FLIGHT } from '../flight-list/flights.constants'
 import { FLIGHTS } from '../flight-list/flights.data'
 import { FlightActions } from './FlightActions'
@@ -17,7 +19,7 @@ export function FlightDetails() {
 
   const flight = useMemo(
     () => FLIGHTS.find(flight => flight.id === selectedFlight),
-    [selectedFlight],
+    [selectedFlight]
   )
 
   if (!flight) {
@@ -25,11 +27,11 @@ export function FlightDetails() {
   }
 
   return (
-    <aside className='absolute w-md top-1/2 -translate-y-1/2 right-7 g-full rounded-xl overflow-hidden bg-[#101010]'>
+    <aside className="absolute w-md top-1/2 -translate-y-1/2 right-7 g-full rounded-xl overflow-hidden bg-[#101010]">
       <FlightHeader flight={flight} />
       <FlightImage flight={flight} />
 
-      <div className='p-3.5'>
+      <div className="p-3.5">
         <FlightRoute flight={flight} />
         <FlightStatus />
         <FlightSchedule />
