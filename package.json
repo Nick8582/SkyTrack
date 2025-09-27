@@ -11,7 +11,8 @@
     "prettier": "prettier --write .",
     "prettier:check": "prettier --check .",
     "format": "npm run prettier && npm run lint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",

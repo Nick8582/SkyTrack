@@ -17,7 +17,7 @@ export default defineConfig([
     },
     rules: {
       'react-hooks/exhaustive-deps': 'error',
-      'react-refresh/only-export-components': 'warn',
+      'react-refresh/only-export-components': 'off',
       'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': ['error', {
         argsIgnorePattern: '^_',
