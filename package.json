@@ -4,15 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "prepare": "husky",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint . --fix",
     "lint:check": "eslint .",
+    "type-check": "tsc --noEmit --pretty",
     "prettier": "prettier --write .",
     "prettier:check": "prettier --check .",
-    "format": "npm run prettier && npm run lint",
-    "preview": "vite preview",
-    "prepare": "husky"
+    "format": "yarn prettier && yarn lint",
+    "validate": "yarn type-check && yarn lint:check && yarn prettier:check",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.13",
@@ -45,9 +47,13 @@
     "vite": "^7.1.7"
   },
   "lint-staged": {
-    "**/*.{ts,tsx,js,jsx}": [
+    "**/*.{ts,tsx}": [
       "prettier --write",
-      "eslint --fix --max-warnings=10"
+      "eslint --fix --max-warnings=0"
+    ],
+    "**/*.{js,jsx}": [
+      "prettier --write",
+      "eslint --fix --max-warnings=0"
     ],
     "**/*.{json,md,css,scss,html,yml,yaml}": [
       "prettier --write"

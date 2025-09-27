@@ -5,4 +5,7 @@ echo "🚀 Running pre-commit checks..."
 
 npx lint-staged
 
-echo "✅ Pre-commit checks completed!"
+echo "🔍 Running TypeScript check..."
+npm run type-check
+
+echo "✅ All checks passed!"
