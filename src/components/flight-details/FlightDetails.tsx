@@ -25,7 +25,7 @@ export function FlightDetails() {
   }
 
   return (
-    <aside className='absolute w-sm top-1/2 -translate-y-1/2 right-7 g-full rounded-xl overflow-hidden bg-[#101010]'>
+    <aside className='absolute w-md top-1/2 -translate-y-1/2 right-7 g-full rounded-xl overflow-hidden bg-[#101010]'>
       <FlightHeader flight={flight} />
       <FlightImage flight={flight} />
 
