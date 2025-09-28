@@ -13,37 +13,37 @@ import { FlightSchedule } from './FlightSchedule'
 import { FlightStatus } from './flightStatus'
 
 export function FlightDetails() {
-  const [searchParams] = useSearchParams()
+	const [searchParams] = useSearchParams()
 
-  const selectedFlight = searchParams.get(QUERY_PARAM_FLIGHT)
+	const selectedFlight = searchParams.get(QUERY_PARAM_FLIGHT)
 
-  const flight = useMemo(
-    () => FLIGHTS.find(flight => flight.id === selectedFlight),
-    [selectedFlight]
-  )
+	const flight = useMemo(
+		() => FLIGHTS.find(flight => flight.id === selectedFlight),
+		[selectedFlight]
+	)
 
-  if (!flight) {
-    return null
-  }
+	if (!flight) {
+		return null
+	}
 
-  return (
-    <aside className="absolute w-md top-1/2 -translate-y-1/2 right-7 g-full rounded-xl overflow-hidden bg-[#101010]">
-      <FlightHeader flight={flight} />
-      <FlightImage flight={flight} />
+	return (
+		<aside className='g-full absolute top-7 right-7 w-md overflow-hidden rounded-xl bg-[#101010]'>
+			<FlightHeader flight={flight} />
+			<FlightImage flight={flight} />
 
-      <div className="p-3.5">
-        <FlightRoute flight={flight} />
-        <FlightStatus />
-        <FlightSchedule />
+			<div className='p-3.5'>
+				<FlightRoute flight={flight} />
+				<FlightStatus />
+				<FlightSchedule />
 
-        <FlightInformation flight={flight} />
-        <FlightActions
-          onFollow={() => {}}
-          onMore={() => {}}
-          onRoute={() => {}}
-          onShare={() => {}}
-        />
-      </div>
-    </aside>
-  )
+				<FlightInformation flight={flight} />
+				<FlightActions
+					onFollow={() => {}}
+					onMore={() => {}}
+					onRoute={() => {}}
+					onShare={() => {}}
+				/>
+			</div>
+		</aside>
+	)
 }

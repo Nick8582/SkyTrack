@@ -10,15 +10,15 @@ import './index.css'
 import { Home } from './pages/home/Home'
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <ThemeProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </ThemeProvider>
-  </StrictMode>
+	<StrictMode>
+		<ThemeProvider>
+			<BrowserRouter>
+				<Routes>
+					<Route element={<Layout />}>
+						<Route path='/' element={<Home />} />
+					</Route>
+				</Routes>
+			</BrowserRouter>
+		</ThemeProvider>
+	</StrictMode>
 )
