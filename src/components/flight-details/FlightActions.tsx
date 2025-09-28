@@ -27,21 +27,21 @@ export function FlightActions({ onRoute, onFollow, onShare, onMore }: Props) {
 					className='bg-card px-mini-element py-mini-element flex flex-col items-center gap-2 transition-colors hover:bg-neutral-800'
 					onClick={onFollow}
 				>
-					<MapPin animateOnHover size={size} />
+					<MapPin animateOnHover animateOnTap size={size} />
 					<span>Follow</span>
 				</button>
 				<button
 					className='bg-card px-mini-element py-mini-element flex flex-col items-center gap-2 transition-colors hover:bg-neutral-800'
 					onClick={onShare}
 				>
-					<SquareArrowOutUpRight animateOnHover size={size} />
+					<SquareArrowOutUpRight animateOnHover animateOnTap size={size} />
 					<span>Share</span>
 				</button>
 				<button
 					className='bg-card px-mini-element py-mini-element flex flex-col items-center gap-2 rounded-tr-2xl rounded-br-2xl transition-colors hover:bg-neutral-800'
 					onClick={onMore}
 				>
-					<Ellipsis animateOnHover size={size} />
+					<Ellipsis animateOnHover animateOnTap size={size} />
 					<span>More</span>
 				</button>
 			</div>

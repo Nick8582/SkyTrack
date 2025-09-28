@@ -21,7 +21,7 @@ export function FlightHeader({ flight }: { flight: IFlight }) {
 				}}
 				className='rounded-full bg-neutral-700 p-1 text-gray-400 transition-colors hover:text-white'
 			>
-				<X animateOnHover size={24} />
+				<X animateOnHover animateOnTap size={24} />
 			</button>
 		</div>
 	)
