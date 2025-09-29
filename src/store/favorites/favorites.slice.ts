@@ -32,8 +32,11 @@ const favoritesSlice = createSlice({
 			}
 		},
 		removeFavorites: (state, action) => {
-			state = state.filter(id => id !== action.payload)
-			saveFavoritesToLocalStorage(state)
+			const index = state.indexOf(action.payload)
+			if (index > -1) {
+				state.splice(index, 1)
+				saveFavoritesToLocalStorage(state)
+			}
 		}
 	}
 })
