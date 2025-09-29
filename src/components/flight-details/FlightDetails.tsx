@@ -33,7 +33,7 @@ export function FlightDetails() {
 
 			<div className='p-3.5'>
 				<FlightRoute flight={flight} />
-				<FlightStatus />
+				<FlightStatus flight={flight} />
 				<FlightSchedule />
 
 				<FlightInformation flight={flight} />

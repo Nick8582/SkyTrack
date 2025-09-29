@@ -1,5 +1,6 @@
 import { useSearchParams } from 'react-router'
 
+import { ProgressBar } from '@/components/custom-ui/ProgressBar'
 import { FlightCardActions } from '@/components/flight-list/actions/FlightCardActions'
 
 import { cn } from '@/lib/utils'
@@ -24,7 +25,7 @@ export function FlightCard({ flight }: Props) {
 			className={cn(
 				'group relative w-full rounded-lg p-0.5 transition-colors ease-in',
 				isActive
-					? 'bg-gradient-to-t from-rose-500 to-orange-400'
+					? 'bg-gradient-to-r from-rose-500 to-orange-400'
 					: 'bg-transparent'
 			)}
 		>
@@ -52,13 +53,15 @@ export function FlightCard({ flight }: Props) {
 						</span>
 					</div>
 				</div>
-				<div className='flex items-center justify-between'>
+				<div className='grid grid-cols-[1fr_5fr_1fr] items-end gap-4'>
 					<div className='space-y-0.5 text-left'>
 						<div>{flight.from.city}</div>
 						<div className='text-3xl font-semibold'>{flight.from.code}</div>
 					</div>
 
-					<div></div>
+					<div className='mb-4.5'>
+						<ProgressBar percentage={flight.progress} />
+					</div>
 
 					<div className='space-y-0.5 text-right'>
 						<div>{flight.to.city}</div>
