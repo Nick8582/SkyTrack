@@ -186,6 +186,10 @@
 	--sidebar-ring: oklch(0.708 0 0);
 }
 
+html {
+	@apply xs:text-sm text-base;
+}
+
 body {
 	font-family: 'JetBrains Mono', monospace;
 	margin: 0;

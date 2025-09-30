@@ -11,8 +11,8 @@ export function Header() {
 	const location = useLocation()
 
 	return (
-		<header className='bg-card sm:px-mini-element absolute top-7 left-1/2 flex w-4/12 -translate-x-1/2 items-center justify-between rounded-xl p-2 px-5 sm:rounded-sm xl:relative xl:top-0 xl:mb-5 xl:w-full'>
-			<div className='flex items-center gap-4 sm:gap-2'>
+		<header className='bg-card sm:px-mini-element xs:flex-col xs:pb-4 absolute top-7 left-1/2 flex w-4/12 -translate-x-1/2 items-center justify-between rounded-xl p-2 px-5 sm:rounded-sm xl:relative xl:top-0 xl:mb-5 xl:w-full'>
+			<div className='xs:flex-wrap xs:justify-center xs:mb-3 flex items-center gap-4 sm:gap-2'>
 				<img
 					src='/logo.svg'
 					className='h-12 w-12 sm:h-10 sm:w-10'

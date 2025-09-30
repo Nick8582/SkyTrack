@@ -33,7 +33,7 @@ export function FlightCardActions({ flightId }: Props) {
 	return (
 		<div
 			className={cn(
-				'absolute top-0.5 right-1 z-50 flex h-full origin-top-right scale-0 flex-col gap-2 px-3 opacity-0 transition-all duration-500 group-hover:-right-13.5 group-hover:scale-100 group-hover:opacity-100'
+				'xs:w-full xs:h-auto xs:origin-bottom-right xs:right-0 xs:top-1 xs:flex-row xs:justify-end xs:group-hover:right-auto xs:group-hover:-top-13 xs:px-1 xs:py-3 absolute top-0.5 right-1 z-50 flex h-full origin-top-right scale-0 flex-col gap-2 px-3 opacity-0 transition-all duration-500 group-hover:-right-13.5 group-hover:scale-100 group-hover:opacity-100'
 			)}
 		>
 			<Button variant={'ghost'} size={'icon'} onClick={handleToggleFavorite}>
