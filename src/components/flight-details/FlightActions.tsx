@@ -14,34 +14,49 @@ interface Props {
 export function FlightActions({ onRoute, onFollow, onShare, onMore }: Props) {
 	const size = 22
 	return (
-		<div>
+		<div className='xs:text-sm'>
 			<div className='grid grid-cols-4 gap-1'>
 				<button
-					className='bg-card px-mini-element py-mini-element flex flex-col items-center gap-2 rounded-tl-2xl rounded-bl-2xl transition-colors hover:bg-neutral-800'
+					className='bg-card p-mini-element xs:rounded-tl-xl xs:rounded-bl-xl flex flex-col items-center gap-2 rounded-tl-2xl rounded-bl-2xl transition-colors hover:bg-neutral-800'
 					onClick={onRoute}
 				>
-					<Route size={size} />
+					<Route size={size} className='xs:size-5' />
 					<span>Route</span>
 				</button>
 				<button
-					className='bg-card px-mini-element py-mini-element flex flex-col items-center gap-2 transition-colors hover:bg-neutral-800'
+					className='bg-card p-mini-element flex flex-col items-center gap-2 transition-colors hover:bg-neutral-800'
 					onClick={onFollow}
 				>
-					<MapPin animateOnHover animateOnTap size={size} />
+					<MapPin
+						animateOnHover
+						animateOnTap
+						size={size}
+						className='xs:size-5'
+					/>
 					<span>Follow</span>
 				</button>
 				<button
-					className='bg-card px-mini-element py-mini-element flex flex-col items-center gap-2 transition-colors hover:bg-neutral-800'
+					className='bg-card p-mini-element flex flex-col items-center gap-2 transition-colors hover:bg-neutral-800'
 					onClick={onShare}
 				>
-					<SquareArrowOutUpRight animateOnHover animateOnTap size={size} />
+					<SquareArrowOutUpRight
+						animateOnHover
+						animateOnTap
+						size={size}
+						className='xs:size-5'
+					/>
 					<span>Share</span>
 				</button>
 				<button
-					className='bg-card px-mini-element py-mini-element flex flex-col items-center gap-2 rounded-tr-2xl rounded-br-2xl transition-colors hover:bg-neutral-800'
+					className='bg-card p-mini-element xs:rounded-tr-xl xs:rounded-br-xl flex flex-col items-center gap-2 rounded-tr-2xl rounded-br-2xl transition-colors hover:bg-neutral-800'
 					onClick={onMore}
 				>
-					<Ellipsis animateOnHover animateOnTap size={size} />
+					<Ellipsis
+						animateOnHover
+						animateOnTap
+						size={size}
+						className='xs:size-5'
+					/>
 					<span>More</span>
 				</button>
 			</div>

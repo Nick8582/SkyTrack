@@ -2,13 +2,13 @@ import type { IFlight } from '../../types/flight.types'
 
 export function FlightInformation({ flight }: { flight: IFlight }) {
 	return (
-		<div className='my-3.5'>
+		<div className='my-3.5 text-sm'>
 			<div className='p-mini-element mb-1 rounded-tl-xl rounded-tr-xl bg-[#282828] font-medium'>
 				Flight information
 			</div>
 			<div className='mb-1 grid grid-cols-2 gap-1'>
 				<div className='bg-card p-mini-element flex items-center justify-between'>
-					<p>{flight.airline.name}</p>
+					<p>{flight.airplane.name}</p>
 				</div>
 				<div className='bg-card p-mini-element flex items-center justify-between'>
 					<div className='flex items-center gap-2'>
@@ -17,7 +17,7 @@ export function FlightInformation({ flight }: { flight: IFlight }) {
 							alt={flight?.airline.country}
 							width={24}
 							height={18}
-							className='mr-2 inline-block'
+							className='xs:w-5 xs:h-4 mr-2 inline-block'
 						/>
 						<span>{flight?.airline.country}</span>
 					</div>
