@@ -17,14 +17,14 @@ export function FlightActions({ onRoute, onFollow, onShare, onMore }: Props) {
 		<div className='xs:text-sm'>
 			<div className='grid grid-cols-4 gap-1'>
 				<button
-					className='bg-card p-mini-element xs:rounded-tl-xl xs:rounded-bl-xl flex flex-col items-center gap-2 rounded-tl-2xl rounded-bl-2xl transition-colors hover:bg-neutral-800'
+					className='bg-card p-mini-element xs:rounded-tl-xl xs:rounded-bl-xl hover:bg-card/60 flex flex-col items-center gap-2 rounded-tl-2xl rounded-bl-2xl transition-colors'
 					onClick={onRoute}
 				>
 					<Route size={size} className='xs:size-5' />
 					<span>Route</span>
 				</button>
 				<button
-					className='bg-card p-mini-element flex flex-col items-center gap-2 transition-colors hover:bg-neutral-800'
+					className='bg-card p-mini-element hover:bg-card/60 flex flex-col items-center gap-2 transition-colors'
 					onClick={onFollow}
 				>
 					<MapPin
@@ -36,7 +36,7 @@ export function FlightActions({ onRoute, onFollow, onShare, onMore }: Props) {
 					<span>Follow</span>
 				</button>
 				<button
-					className='bg-card p-mini-element flex flex-col items-center gap-2 transition-colors hover:bg-neutral-800'
+					className='bg-card p-mini-element hover:bg-card/60 flex flex-col items-center gap-2 transition-colors'
 					onClick={onShare}
 				>
 					<SquareArrowOutUpRight
@@ -48,7 +48,7 @@ export function FlightActions({ onRoute, onFollow, onShare, onMore }: Props) {
 					<span>Share</span>
 				</button>
 				<button
-					className='bg-card p-mini-element xs:rounded-tr-xl xs:rounded-br-xl flex flex-col items-center gap-2 rounded-tr-2xl rounded-br-2xl transition-colors hover:bg-neutral-800'
+					className='bg-card p-mini-element xs:rounded-tr-xl xs:rounded-br-xl hover:bg-card/60 flex flex-col items-center gap-2 rounded-tr-2xl rounded-br-2xl transition-colors'
 					onClick={onMore}
 				>
 					<Ellipsis

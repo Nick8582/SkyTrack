@@ -3,7 +3,7 @@ import type { IFlight } from '../../types/flight.types'
 export function FlightInformation({ flight }: { flight: IFlight }) {
 	return (
 		<div className='my-3.5 text-sm'>
-			<div className='p-mini-element mb-1 rounded-tl-xl rounded-tr-xl bg-[#282828] font-medium'>
+			<div className='p-mini-element bg-card mb-1 rounded-tl-xl rounded-tr-xl font-medium'>
 				Flight information
 			</div>
 			<div className='mb-1 grid grid-cols-2 gap-1'>
