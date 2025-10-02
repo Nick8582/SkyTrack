@@ -38,10 +38,10 @@ export function FilterSearchSelect({
 		<Popover open={open} onOpenChange={setOpen}>
 			<PopoverTrigger asChild>
 				<Button
-					variant='outline'
+					variant='secondary'
 					role='combobox'
 					aria-expanded={open}
-					className='w-[180px] justify-between gap-0.5 opacity-70'
+					className='w-[180px] justify-between gap-0.5'
 				>
 					{value
 						? data.find(item => item === value)
