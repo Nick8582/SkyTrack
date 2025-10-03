@@ -12,11 +12,7 @@ export function FlightList() {
 	const [currentAirlines, setCurrentAirlines] = useState<string | null>(null)
 
 	useEffect(() => {
-		const timer = setTimeout(() => {
-			setIsLoading(false)
-		}, 1500)
-
-		return () => clearTimeout(timer)
+		setIsLoading(false)
 	}, [])
 
 	const filteredFlights = useMemo(() => {

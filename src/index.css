@@ -308,7 +308,8 @@ body {
 	font-family: 'JetBrains Mono', monospace;
 	margin: 0;
 	min-width: 320px;
-	min-height: 100vh;
+	min-height: 100dvh;
+	height: 100%;
 	font-optical-sizing: auto;
 }
 

@@ -4,7 +4,7 @@ import { Header } from '@/components/header/Header'
 
 export function Layout() {
 	return (
-		<div className='xs:p-2.5 relative p-7 sm:p-3'>
+		<div className='xs:p-2.5 relative h-screen p-7 sm:p-3'>
 			<Header />
 			<Outlet />
 		</div>
