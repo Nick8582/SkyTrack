@@ -23,10 +23,10 @@ export function FlightCard({ flight }: Props) {
 	return (
 		<div
 			className={cn(
-				'group animate-fadeIn relative w-full rounded-lg p-0.5 transition-colors ease-in',
+				'group animate-fadeIn relative z-10 w-full rounded-lg p-0.5 shadow-xl transition-colors ease-in',
 				isActive
 					? 'bg-gradient-to-r from-rose-500 to-orange-400'
-					: 'bg-transparent'
+					: 'bg-flight-card'
 			)}
 		>
 			<FlightCardActions flightId={flight.id} />
@@ -34,7 +34,7 @@ export function FlightCard({ flight }: Props) {
 				onClick={() => {
 					setSearchParams({ [QUERY_PARAM_FLIGHT]: flight.id })
 				}}
-				className={cn('bg-flight-card block h-full w-full rounded-lg p-5')}
+				className={cn('bg-flight-card block h-full w-full rounded-lg p-4')}
 			>
 				<div className='mb-7 flex items-center justify-between'>
 					<div className='flex items-center gap-3'>

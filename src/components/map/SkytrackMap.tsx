@@ -9,6 +9,8 @@ import { dashedStyle, solidStyle } from '@/components/map/sky-track-map.utils'
 
 import { useCurrentFlight } from '@/hooks/useCurrentFlight'
 
+import { useTheme } from '@/providers/theme/useTheme'
+
 import 'maplibre-gl/dist/maplibre-gl.css'
 
 export function SkyTrackMap() {
@@ -77,6 +79,8 @@ export function SkyTrackMap() {
 		]
 	}
 
+	const { theme } = useTheme()
+
 	return (
 		<Map
 			ref={ref}
@@ -96,18 +100,20 @@ export function SkyTrackMap() {
 				zIndex: 0
 			}}
 			mapStyle={
-				'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json'
+				theme === 'dark'
+					? 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json'
+					: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json'
 			}
 		>
 			{solidCoords.length > 1 && (
 				<Source id='route-solid' type='geojson' data={solidGeoJson}>
-					<Layer {...solidStyle} />
+					<Layer {...solidStyle(theme)} />
 				</Source>
 			)}
 
 			{dashedCoords.length > 1 && (
 				<Source id='route-dashed' type='geojson' data={dashedGeoJson}>
-					<Layer {...dashedStyle} />
+					<Layer {...dashedStyle(theme)} />
 				</Source>
 			)}
 
